@@ -6,11 +6,11 @@
 #    By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 15:15:20 by arojas-a          #+#    #+#              #
-#    Updated: 2024/07/03 14:36:39 by arojas-a         ###   ########.fr        #
+#    Updated: 2024/07/08 10:50:55 by arojas-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
-CC = gcc
+HBONUS = .bonus
 CFLAGS = -Wall -Wextra -Werror
 INCLUDE = libft.h
 
@@ -34,21 +34,23 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
 
-bonus: $(BONUS_OBJS)
+bonus: .bonus
+
+$(HBONUS): $(BONUS_OBJS)
 	ar rc $(NAME) $(BONUS_OBJS)
-	ranlib $(NAME)
+	@touch $(HBONUS)
 
 %.o: %.c $(INCLUDE) Makefile
-	$(CC) $(CFLAGS) -c $< -o $@
+	gcc $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
+	rm -f .bonus
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:	bonus all clean fclean re

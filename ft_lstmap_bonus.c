@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 11:23:00 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/01 12:32:34 by arojas-a         ###   ########.fr       */
+/*   Created: 2024/07/03 19:18:36 by arojas-a          #+#    #+#             */
+/*   Updated: 2024/07/05 12:23:55 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -41,17 +41,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 }
 /*#include <stdio.h>
 #include <bsd/string.h>
-#include "ft_lstnew.c"
-#include "ft_lstadd_back.c"
+#include "ft_lstnew_bonus.c"
+#include "ft_lstadd_back_bonus.c"
 #include "ft_strlen.c"
 #include "ft_strdup.c"
 void	*my_function(void *content)
 {
-	char str[] = "hola";
-	size_t len = ft_strlen(str);
-	char *dest = ft_strdup(str);
-	strcpy(dest, str);
-	strcpy((char *)content, dest);
+	char *dest = ft_strdup(content);
+	if (dest == NULL)
+		return NULL;
+	*dest -= 32;
 	return (dest);
 }
 
@@ -82,11 +81,16 @@ int	main(void)
 	printf("Contenido del tercer nodo: %c \n", *(char *)third->content);
 
 	new_list = ft_lstmap(head, &my_function, del);
-	
+	t_list *curent = new_list;
+
 	printf("------------------------------\n");
-	printf("Contenido del primer nodo: %s \n", (char *)new_list->content);
-	printf("Contenido del segundo nodo: %s \n", (char *)new_list->content);
-	printf("Contenido del tercer nodo: %s \n", (char *)new_list->content);
+	printf("Contenido del primer nodo: %s \n", (char *)curent->content);
+	curent = curent->next;
+	printf("Contenido del segundo nodo: %s \n", (char *)curent->content);
+	curent = curent->next;
+	printf("Contenido del tercer nodo: %s \n", (char *)curent->content);
+	ft_lstclear(&new_list, del);
+	ft_lstclear(&head, del);
 
 	return (0);
 }*/

@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/28 09:55:30 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/01 12:15:15 by arojas-a         ###   ########.fr       */
+/*   Created: 2024/07/03 19:20:49 by arojas-a          #+#    #+#             */
+/*   Updated: 2024/07/05 11:31:41 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
@@ -19,7 +18,9 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	del(lst->content);
 	free(lst);
 }
-/*#include <string.h>
+/*
+#include <stdio.h>
+#include <string.h>
 
 void	del(void *content)
 {

@@ -6,7 +6,7 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 15:10:16 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/01 16:22:53 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/07/08 10:40:29 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,14 +20,26 @@ static size_t	ft_count_words(char const *s, char c)
 	count = 0;
 	while (s[i])
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		if (s[i] != '\0')
+		if (s[i] && s[i] != c)
 			count++;
 		while (s[i] && (s[i] != c))
 			i++;
 	}
 	return (count);
+}
+
+static size_t	ft_word_len(const char *s, char c)
+{
+	size_t	len;
+
+	len = 0;
+	while (*s && *s == c)
+		s++;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
 }
 
 static char	*ft_strndup(const char *s, size_t n)
@@ -36,7 +48,7 @@ static char	*ft_strndup(const char *s, size_t n)
 	char	*dest;
 
 	i = 0;
-	dest = (char *)malloc(sizeof(s) * (n + 1));
+	dest = (char *)malloc(sizeof(char) * (n + 1));
 	if (dest == NULL)
 		return (NULL);
 	while (i < n)
@@ -48,39 +60,54 @@ static char	*ft_strndup(const char *s, size_t n)
 	return (dest);
 }
 
+static void	*ft_del(char **ptr, size_t j)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < j && ptr[i] != NULL)
+	{
+		free(ptr[i]);
+		ptr[i] = NULL;
+		i++;
+	}
+	free(ptr);
+	ptr = NULL;
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
-	size_t	j;
-	size_t	word_len;
-	char	**ptr;
+	size_t	word_count;
+	char	**str;
 
-	i = 0;
-	j = 0;
-	ptr = (char **)malloc(sizeof(s) * (ft_count_words((char const *)s, c) + 1));
-	if (ptr == NULL)
+	word_count = ft_count_words(s, c);
+	str = ft_calloc(word_count + 1, sizeof(char *));
+	if (str == NULL)
 		return (NULL);
-	while (s[i] != '\0')
+	i = 0;
+	while (*s && i < word_count)
 	{
-		if (s[i] != c)
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
 		{
-			word_len = 0;
-			while (s[i + word_len] != '\0' && s[i + word_len] != c)
-				word_len++;
-			ptr[j++] = ft_strndup(&s[i], word_len);
-			i += word_len;
+			str[i] = ft_strndup(s, ft_word_len(s, c));
+			if (str[i++] == NULL)
+				return (ft_del(str, i));
 		}
-		else
-			i++;
+		while (*s && *s != c)
+			s++;
 	}
-	ptr[j] = NULL;
-	return (ptr);
+	str[word_count] = NULL;
+	return (str);
 }
 /*#include <stdio.h>
 int	main(void)
 {
-	char *s =  "aqui tiene que haber varias subcadenas";
-	char c = ' ';
+	char *s = "split  ||this|for|me|||||!|";
+	char c = '|';
 	int	i = 0;
 
 	printf("cantidad de subcadenas = %zu \n",ft_count_words(s, c));
@@ -88,8 +115,9 @@ int	main(void)
 	while (result[i] != NULL)
 	{
 		printf("%s \n", result[i]);
+		free(result[i]);
 		i++;
 	}
-
+	free(result);
 	return (0);
 }*/

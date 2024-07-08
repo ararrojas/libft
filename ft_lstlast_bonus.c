@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 14:15:07 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/06/26 14:46:30 by arojas-a         ###   ########.fr       */
+/*   Created: 2024/07/03 19:19:16 by arojas-a          #+#    #+#             */
+/*   Updated: 2024/07/03 19:20:03 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -22,7 +21,10 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (lst);
 }
-/*int main(void)
+/*
+#include <stdio.h>
+
+int main(void)
 {
     t_list *head = malloc(sizeof(t_list));
     t_list *second = malloc(sizeof(t_list));

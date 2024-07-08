@@ -6,7 +6,7 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 15:11:24 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/01 16:38:06 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/07/08 10:45:31 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,21 +21,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	len = ft_strlen(s1) + ft_strlen(s2);
-	dest = malloc(sizeof(s1) * len + 1);
+	dest = ft_calloc(len + 1, 1);
 	if (dest == NULL)
 		return (NULL);
 	while (s1[i])
-	{
-		dest[j++] = s1[i];
-		i++;
-	}
+		dest[j++] = s1[i++];
 	i = 0;
 	while (s2[i])
-	{
-		dest[j++] = s2[i];
-		i++;
-	}
-	dest[j] = '\0';
+		dest[j++] = s2[i++];
 	return (dest);
 }
 /*
