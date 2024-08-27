@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   print_hexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 19:22:19 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/08 15:56:55 by arojas-a         ###   ########.fr       */
+/*   Created: 2024/07/08 16:40:59 by arojas-a          #+#    #+#             */
+/*   Updated: 2024/07/10 13:11:09 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	print_hexa(unsigned int nb, const char c, int *count)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	char	*base;
+
+	if (nb == 0)
+		print_char('0', count);
+	else
+	{
+		if (c == 'x')
+			base = "0123456789abcdef";
+		else
+			base = "0123456789ABCDEF";
+		if (nb >= 16)
+		{
+			print_hexa((nb / 16), c, count);
+			print_hexa((nb % 16), c, count);
+		}
+		else
+			print_char(base[nb], count);
+	}
 }
-/*int	main(void)
-{
-	t_list	*node1 = ft_lstnew("hola");
-	t_list	*lst = node1;
-	t_list	*new = ft_lstnew("nuevo hola");
-	ft_lstadd_front(&lst, new);
-	printf("%s \n", (char *)lst->content);
-	free(new);
-}*/

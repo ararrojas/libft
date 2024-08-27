@@ -6,7 +6,7 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 19:20:19 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/03 19:20:36 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/07/08 16:16:43 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,7 +21,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-/*#include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 #include "ft_strlen.c"
 #include "ft_strdup.c"
@@ -62,4 +62,4 @@ int	main(void)
 	printf("Contenido del tercer nodo: %s \n", (char *)third->content);
 
 	return (0);
-}*/
+}

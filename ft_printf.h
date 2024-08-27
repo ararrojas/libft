@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 19:22:19 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/08 15:56:55 by arojas-a         ###   ########.fr       */
+/*   Created: 2024/07/03 13:32:19 by arojas-a          #+#    #+#             */
+/*   Updated: 2024/07/10 16:45:33 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
-}
-/*int	main(void)
-{
-	t_list	*node1 = ft_lstnew("hola");
-	t_list	*lst = node1;
-	t_list	*new = ft_lstnew("nuevo hola");
-	ft_lstadd_front(&lst, new);
-	printf("%s \n", (char *)lst->content);
-	free(new);
-}*/
+# include <stdarg.h>
+# include <unistd.h>
+
+int		ft_printf(const char *str, ...);
+void	print_char(char c, int *count);
+void	print_str(char *str, int *count);
+void	print_hexa(unsigned int nb, const char c, int *count);
+void	print_number(int nb, int *count);
+void	print_unsigned(unsigned int n, int *count);
+void	print_pointer(unsigned long ptr, int *count);
+
+#endif

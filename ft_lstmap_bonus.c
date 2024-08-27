@@ -6,7 +6,7 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 19:18:36 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/05 12:23:55 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/07/08 16:27:45 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -39,7 +39,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (first);
 }
-/*#include <stdio.h>
+#include <stdio.h>
 #include <bsd/string.h>
 #include "ft_lstnew_bonus.c"
 #include "ft_lstadd_back_bonus.c"
@@ -93,4 +93,4 @@ int	main(void)
 	ft_lstclear(&head, del);
 
 	return (0);
-}*/
+}

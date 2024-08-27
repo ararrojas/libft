@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 19:22:19 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/08 15:56:55 by arojas-a         ###   ########.fr       */
+/*   Created: 2024/07/09 10:44:36 by arojas-a          #+#    #+#             */
+/*   Updated: 2024/07/10 12:36:14 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	print_char(char ch, int *count)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	int	check;
+
+	check = write(1, &ch, 1);
+	if (check == 1)
+		(*count)++;
 }
-/*int	main(void)
-{
-	t_list	*node1 = ft_lstnew("hola");
-	t_list	*lst = node1;
-	t_list	*new = ft_lstnew("nuevo hola");
-	ft_lstadd_front(&lst, new);
-	printf("%s \n", (char *)lst->content);
-	free(new);
-}*/

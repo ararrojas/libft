@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 19:22:19 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/08 15:56:55 by arojas-a         ###   ########.fr       */
+/*   Created: 2024/07/09 11:46:14 by arojas-a          #+#    #+#             */
+/*   Updated: 2024/07/10 17:29:44 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	print_hexa_pointer(unsigned long ptr, int *count)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	char	*base;
+
+	base = "0123456789abcdef";
+	if (ptr >= 16)
+		print_hexa_pointer(ptr / 16, count);
+	print_char(base[ptr % 16], count);
 }
-/*int	main(void)
+
+void	print_pointer(unsigned long ptr, int *count)
 {
-	t_list	*node1 = ft_lstnew("hola");
-	t_list	*lst = node1;
-	t_list	*new = ft_lstnew("nuevo hola");
-	ft_lstadd_front(&lst, new);
-	printf("%s \n", (char *)lst->content);
-	free(new);
-}*/
+	if (ptr == '\0')
+	{
+		print_str("(nil)", count);
+		return ;
+	}
+	else
+	{
+		print_str("0x", count);
+		print_hexa_pointer(ptr, count);
+	}
+}

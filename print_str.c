@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/03 19:22:19 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/08 15:56:55 by arojas-a         ###   ########.fr       */
+/*   Created: 2024/07/08 14:44:01 by arojas-a          #+#    #+#             */
+/*   Updated: 2024/07/10 12:08:03 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	print_str(char *str, int *count)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	size_t	i;
+
+	if (str == NULL)
+	{
+		return (print_str("(null)", count));
+	}
+	i = 0;
+	while (str[i] != '\0')
+	{
+		print_char(str[i], count);
+		i++;
+	}
 }
-/*int	main(void)
-{
-	t_list	*node1 = ft_lstnew("hola");
-	t_list	*lst = node1;
-	t_list	*new = ft_lstnew("nuevo hola");
-	ft_lstadd_front(&lst, new);
-	printf("%s \n", (char *)lst->content);
-	free(new);
-}*/

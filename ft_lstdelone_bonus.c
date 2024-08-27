@@ -6,7 +6,7 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 19:20:49 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/05 11:31:41 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/07/08 16:06:41 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,7 +18,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	del(lst->content);
 	free(lst);
 }
-/*
+
 #include <stdio.h>
 #include <string.h>
 
@@ -43,4 +43,4 @@ int	main(void)
 
 	ft_lstdelone(node, del);
 	return (0);
-}*/
+}
