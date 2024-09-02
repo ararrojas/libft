@@ -6,10 +6,10 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 15:50:36 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/09/02 15:53:00 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:55:12 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "fdf.h"
+#include "libft.h"
 
 int	ft_isspace(char c)
 {
