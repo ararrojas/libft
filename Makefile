@@ -6,7 +6,7 @@
 #    By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 15:15:20 by arojas-a          #+#    #+#              #
-#    Updated: 2024/08/27 14:02:04 by arojas-a         ###   ########.fr        #
+#    Updated: 2024/09/02 15:53:19 by arojas-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -22,7 +22,7 @@ SRCS = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 	  ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	  ft_printf.c print_char.c print_str.c print_hexa.c print_number.c \
-	  print_pointer.c get_next_line.c get_next_line_utils.c
+	  print_pointer.c get_next_line.c get_next_line_utils.c ft_isspace.c
 
 OBJS = $(SRCS:.c=.o)
 

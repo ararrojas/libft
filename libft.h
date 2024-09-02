@@ -6,7 +6,7 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 15:14:50 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/08 15:39:35 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/09/02 15:52:50 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -32,6 +32,7 @@ int					ft_tolower(int c);
 int					ft_atoi(const char *nptr);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
+int					ft_isspace(char c);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
