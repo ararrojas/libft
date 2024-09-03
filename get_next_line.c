@@ -6,7 +6,7 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 17:10:52 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/09/03 10:45:49 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/09/03 10:50:54 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -92,7 +92,7 @@ char	*read_line(int fd, char *static_buf)
 			return (NULL);
 		}
 		buffer[byte_read] = '\0';
-		static_buf = join_and_free(static_buf, buffer);
+		static_buf = join_and_free_gnl(static_buf, buffer);
 	}
 	free(buffer);
 	return (static_buf);
