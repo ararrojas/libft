@@ -6,12 +6,12 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 17:10:52 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/08/27 14:04:06 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/09/03 10:45:49 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
 
-char	*join_and_free(char *static_buf, char *buffer)
+char	*join_and_free_gnl(char *static_buf, char *buffer)
 {
 	char	*temp;
 
