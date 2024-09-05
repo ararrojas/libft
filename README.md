@@ -14,7 +14,7 @@ The repository is organized as follows:
 
 ```bash
 .
-├── *.h              # Header files -> libft.h | ft_printf.h | get_next_line.h
+├── *.h              # Header file -> libft.h
 ├── *.c              # Source files
 ├── Makefile         # Script to compile the library
 ├── README.md        # This file
@@ -43,8 +43,6 @@ Once you have compiled the library, you can use it in your own projects as follo
 Include header files in your code:
 ```c
 #include "libft.h"
-#include "ft_print.h"
-#include "get_next_line.h"
 ```
 
 ### Start using the functions :)
