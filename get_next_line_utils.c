@@ -6,10 +6,10 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 17:11:08 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/08/27 14:04:18 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/09/05 14:21:40 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "libft.h"
 
 size_t	ft_strlen_gnl(char *s)
 {

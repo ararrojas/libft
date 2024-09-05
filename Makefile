@@ -6,13 +6,13 @@
 #    By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 15:15:20 by arojas-a          #+#    #+#              #
-#    Updated: 2024/09/02 15:53:19 by arojas-a         ###   ########.fr        #
+#    Updated: 2024/09/05 14:18:41 by arojas-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
 HBONUS = .bonus
 CFLAGS = -Wall -Wextra -Werror
-INCLUDE = libft.h ft_printf.h get_next_line.h
+INCLUDE = libft.h
 
 SRCS = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
       ft_strdup.c ft_strlen.c ft_tolower.c ft_toupper.c ft_bzero.c \

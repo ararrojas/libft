@@ -6,10 +6,10 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 17:10:52 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/09/03 10:50:54 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/09/05 14:21:29 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "libft.h"
 
 char	*join_and_free_gnl(char *static_buf, char *buffer)
 {

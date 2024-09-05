@@ -6,7 +6,7 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 15:14:50 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/09/02 15:52:50 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/09/05 14:28:38 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -14,7 +14,18 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <stdarg.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 1024
+# endif
 
 typedef struct s_list
 {
@@ -69,5 +80,25 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 int					ft_lstsize(t_list *lst);
+
+// ft_printf
+int		ft_printf(const char *str, ...);
+void	print_char(char c, int *count);
+void	print_str(char *str, int *count);
+void	print_hexa(unsigned int nb, const char c, int *count);
+void	print_number(int nb, int *count);
+void	print_unsigned(unsigned int n, int *count);
+void	print_pointer(unsigned long ptr, int *count);
+
+// get_next_line
+char	*join_and_free_gnl(char *static_buf, char *buffer);
+char	*get_next(char *static_buf);
+char	*get_line(char *static_buf);
+char	*read_line(int fd, char *static_buf);
+char	*get_next_line(int fd);
+//utils
+size_t	ft_strlen_gnl(char *s);
+char	*ft_strchr_gnl(char *s, int c);
+char	*ft_strjoin_gnl(char *s1, char *s2);
 
 #endif

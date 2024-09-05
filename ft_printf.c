@@ -6,10 +6,10 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:30:31 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/10 17:19:50 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/09/05 14:19:53 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	check_type(va_list args, char c, int *count)
 {

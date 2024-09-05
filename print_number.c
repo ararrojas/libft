@@ -6,10 +6,10 @@
 /*   By: arojas-a <arojas-a@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 10:19:56 by arojas-a          #+#    #+#             */
-/*   Updated: 2024/07/10 17:19:42 by arojas-a         ###   ########.fr       */
+/*   Updated: 2024/09/05 14:20:51 by arojas-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#include "libft.h"
 
 void	print_number(int nb, int *count)
 {
