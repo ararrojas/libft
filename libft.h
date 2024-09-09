@@ -101,4 +101,7 @@ size_t	ft_strlen_gnl(char *s);
 char	*ft_strchr_gnl(char *s, int c);
 char	*ft_strjoin_gnl(char *s1, char *s2);
 
+// extra
+u_int32_t	ft_atoi_base(const char *nptr, int base);
+
 #endif
