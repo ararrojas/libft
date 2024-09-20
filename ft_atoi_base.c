@@ -1,52 +1,34 @@
 #include "libft.h"
 
-static int	is_whitespace(char c)
+unsigned int	get_nbr(char c, char *base)
 {
-	if (c == ' ' || c == '\n' || c == '\t' || c == '\v' || c == '\r'
-		|| c == '\f')
-		return (1);
-	return (0);
+	unsigned int	i;
+
+	i = 0;
+	while (ft_toupper(base[i])
+		&& ft_toupper(base[i]) != ft_toupper(c))
+		i++;
+	return (i);
 }
 
-static int	base_value(int c, int base)
+unsigned int	ft_atoi_base(const char *nptr, char *base)
 {
-	char	*small_base;
-	char	*big_base;
-	int		i;
+	unsigned int	result;
+	size_t			i;
+	size_t			base_len;
 
-	small_base = "0123456789abcdefghijklmnopqrstuvwxyz";
-	big_base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	i = 0;
-	while (i < base)
+	result = 0;
+	base_len = ft_strlen(base);
+	if (ft_strnstr(nptr, "0x", ft_strlen(nptr)) != NULL)
+		i = 2;
+	if (i <= ft_strlen(nptr))
 	{
-		if (c == small_base[i] || c == big_base[i])
-			return (i);
-		i++;
+		while (nptr[i])
+		{
+			result = result * base_len + get_nbr(nptr[i], base);
+			i++;
+		}
 	}
-	return (-1);
-}
-
-u_int32_t	ft_atoi_base(const char *nptr, int base)
-{
-	u_int32_t	value;
-	int			minus;
-	int			i;
-
-	value = 0;
-	minus = 1;
-	i = 0;
-	while (is_whitespace(nptr[i]))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-		minus = -1;
-		i++;
-	}
-	while (base_value(nptr[i], base) != -1)
-	{
-		value = (value * base) + base_value(nptr[i], base);
-		i++;
-	}
-	return (value * minus);
+	return (result);
 }
